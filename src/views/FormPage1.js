@@ -1,3 +1,10 @@
+import Checkbox from "../components/Checkbox";
+import InputTelBox from "../components/InputTelBox";
+import InputTextBox from "../components/InputTextBox";
+import NavSection from "../components/NavSection";
+import TextArea from "../components/TextArea";
+import TextContent from "../components/TextContent";
+
 export default function FormPage1() {
     return (
         <ul
@@ -5,39 +12,13 @@ export default function FormPage1() {
             role="presentation"
             style={{ display: "none" }}
         >
-            <li className="form-line" data-type="control_text" id="id_353">
-                <div id="cid_353" className="form-input-wide" data-layout="full">
-                    <div
-                        id="text_353"
-                        className="form-html"
-                        data-component="text"
-                        tabIndex={-1}
-                    >
-                        <p>
-                            <img
-                                src="https://www.jotform.com/uploads/linerlegal/form_files/Opera%20Snapshot_2024-09-08_095733_11120SSA-338020ADL.pdf.66dd2f17d60011.98973832.png"
-                                alt=""
-                            />
-                        </p>
-                        <p>
-                            <em>
-                                Anyone who makes or causes to be made a false statement or
+            <TextContent id="353" img="https://www.jotform.com/uploads/linerlegal/form_files/Opera%20Snapshot_2024-09-08_095733_11120SSA-338020ADL.pdf.66dd2f17d60011.98973832.png" text="Anyone who makes or causes to be made a false statement or
                                 representation of material fact for use in determining a payment
                                 under the Social Security Act, or knowingly conceals or fails to
                                 disclose an event with an intent to affect an initial or continued
                                 right to payment, commits a crime punishable under Federal law by
                                 fine, imprisonment, or both, and may be subject to administrative
-                                sanctions.
-                            </em>
-                        </p>
-                        <p style={{ textAlign: "center" }}>
-                            <span style={{ fontSize: "14pt" }}>
-                                <strong>SECTION A - GENERAL INFORMATION</strong>
-                            </span>
-                        </p>
-                    </div>
-                </div>
-            </li>
+                                sanctions." heading="SECTION A - GENERAL INFORMATION" />
             <li
                 className="form-line form-line-column form-col-1 jf-required"
                 data-type="control_textbox"
@@ -56,21 +37,7 @@ export default function FormPage1() {
                     className="form-input-wide jf-required"
                     data-layout="half"
                 >
-                    <input
-                        type="text"
-                        id="input_190"
-                        name="q190_1Name"
-                        data-type="input-textbox"
-                        className="form-textbox validate[required]"
-                        data-defaultvalue=""
-                        style={{ width: 310 }}
-                        size={310}
-                        placeholder="First, Middle Initial, Last, Suffix"
-                        data-component="textbox"
-                        aria-labelledby="label_190"
-                        required=""
-                        defaultValue=""
-                    />
+                    <InputTextBox id="input_190" name="q190_1Name" placeholder="First, Middle Initial, Last, Suffix" labelled="label_190" />
                 </div>
             </li>
             <li
@@ -91,21 +58,7 @@ export default function FormPage1() {
                     className="form-input-wide jf-required"
                     data-layout="half"
                 >
-                    <input
-                        type="text"
-                        id="input_487"
-                        name="q487_2Your"
-                        data-type="input-textbox"
-                        className="form-textbox validate[required]"
-                        data-defaultvalue=""
-                        style={{ width: 310 }}
-                        size={310}
-                        placeholder="Person completing the form"
-                        data-component="textbox"
-                        aria-labelledby="label_487"
-                        required=""
-                        defaultValue=""
-                    />
+                    <InputTextBox id="input_487" name="q487_2Your" placeholder="Person completing the form" labelled="label_487" />
                 </div>
             </li>
             <li
@@ -127,20 +80,7 @@ export default function FormPage1() {
                     className="form-input-wide jf-required"
                     data-layout="half"
                 >
-                    <input
-                        type="text"
-                        id="input_488"
-                        name="q488_3Relationship"
-                        data-type="input-textbox"
-                        className="form-textbox validate[required]"
-                        data-defaultvalue=""
-                        style={{ width: 310 }}
-                        size={310}
-                        data-component="textbox"
-                        aria-labelledby="label_488"
-                        required=""
-                        defaultValue=""
-                    />
+                    <InputTextBox id="input_488" name="q488_3Relationship" labelled="label_488" />
                 </div>
             </li>
             <li
@@ -289,24 +229,15 @@ export default function FormPage1() {
                     </div>
                 </div>
             </li>
-            <li className="form-line" data-type="control_text" id="id_193">
-                <div id="cid_193" className="form-input-wide" data-layout="full">
-                    <div
-                        id="text_193"
-                        className="form-html"
-                        data-component="text"
-                        tabIndex={-1}
-                    >
-                        <p>
-                            3. <strong>YOUR DAYTIME TELEPHONE NUMBER</strong>
-                            <em>
-                                (If there is no telephone number where you can be reached, please
-                                give us a daytime number where we can leave a message for you.){" "}
-                            </em>
-                        </p>
-                    </div>
-                </div>
-            </li>
+            <TextContent id="193">
+                <p>
+                    3. <strong>YOUR DAYTIME TELEPHONE NUMBER</strong>
+                    <em>
+                        (If there is no telephone number where you can be reached, please
+                        give us a daytime number where we can leave a message for you.){" "}
+                    </em>
+                </p>
+            </TextContent>
             <li
                 className="form-line form-line-column form-col-1 jf-required"
                 data-type="control_phone"
@@ -332,19 +263,7 @@ export default function FormPage1() {
                             style={{ verticalAlign: "top" }}
                             data-input-type="areaCode"
                         >
-                            <input
-                                type="tel"
-                                id="input_327_area"
-                                name="q327_primary327[area]"
-                                className="form-textbox validate[required]"
-                                data-defaultvalue=""
-                                autoComplete="section-input_327 tel-area-code"
-                                placeholder={212}
-                                data-component="areaCode"
-                                aria-labelledby="label_327 sublabel_327_area"
-                                required=""
-                                defaultValue=""
-                            />
+                            <InputTelBox id="input_327_area" name="q327_primary327[area]" autoComplete="section-input_327 tel-area-code" placeholder={212} dataComponent="areaCode" labelled="label_327 sublabel_327_area" />
                             <span className="phone-separate" aria-hidden="true">
                                 -
                             </span>
@@ -362,19 +281,7 @@ export default function FormPage1() {
                             style={{ verticalAlign: "top" }}
                             data-input-type="phone"
                         >
-                            <input
-                                type="tel"
-                                id="input_327_phone"
-                                name="q327_primary327[phone]"
-                                className="form-textbox validate[required]"
-                                data-defaultvalue=""
-                                autoComplete="section-input_327 tel-local"
-                                placeholder="555-5555"
-                                data-component="phone"
-                                aria-labelledby="label_327 sublabel_327_phone"
-                                required=""
-                                defaultValue=""
-                            />
+                            <InputTelBox id="input_327_phone" name="q327_primary327[phone]" autoComplete="section-input_327 tel-local" placeholder="555-5555" dataComponent="phone" labelled="label_327 sublabel_327_phone" />
                             <label
                                 className="form-sub-label"
                                 htmlFor="input_327_phone"
@@ -413,10 +320,9 @@ export default function FormPage1() {
                     >
                         <span className="form-checkbox-item">
                             <span className="dragger-item" />
-                            <input
+                            <Checkbox
                                 aria-describedby="label_354"
-                                type="checkbox"
-                                className="form-checkbox validate[required, maxselection]"
+                                validate={["required", "maxselection"]}
                                 id="input_354_0"
                                 name="q354_typeA354[]"
                                 required=""
@@ -429,10 +335,9 @@ export default function FormPage1() {
                         </span>
                         <span className="form-checkbox-item">
                             <span className="dragger-item" />
-                            <input
+                            <Checkbox
                                 aria-describedby="label_354"
-                                type="checkbox"
-                                className="form-checkbox validate[required, maxselection]"
+                                validate={["required", "maxselection"]}
                                 id="input_354_1"
                                 name="q354_typeA354[]"
                                 required=""
@@ -445,10 +350,9 @@ export default function FormPage1() {
                         </span>
                         <span className="form-checkbox-item" style={{ clear: "left" }}>
                             <span className="dragger-item" />
-                            <input
+                            <Checkbox
                                 aria-describedby="label_354"
-                                type="checkbox"
-                                className="form-checkbox validate[required, maxselection]"
+                                validate={["required", "maxselection"]}
                                 id="input_354_2"
                                 name="q354_typeA354[]"
                                 required=""
@@ -462,28 +366,19 @@ export default function FormPage1() {
                     </div>
                 </div>
             </li>
-            <li className="form-line" data-type="control_text" id="id_490">
-                <div id="cid_490" className="form-input-wide" data-layout="full">
-                    <div
-                        id="text_490"
-                        className="form-html"
-                        data-component="text"
-                        tabIndex={-1}
-                    >
-                        <p>
-                            <span style={{ fontSize: "12pt" }}>
-                                <em>
-                                    <strong>
-                                        If you do not know the answer or the answer is “none” or “does
-                                        not apply, ” please write “don't know” or “none” or “does not
-                                        apply.”
-                                    </strong>
-                                </em>
-                            </span>
-                        </p>
-                    </div>
-                </div>
-            </li>
+            <TextContent id="490">
+                <p>
+                    <span style={{ fontSize: "12pt" }}>
+                        <em>
+                            <strong>
+                                If you do not know the answer or the answer is “none” or “does
+                                not apply, ” please write “don't know” or “none” or “does not
+                                apply.”
+                            </strong>
+                        </em>
+                    </span>
+                </p>
+            </TextContent>
             <li
                 className="form-line jf-required"
                 data-type="control_textarea"
@@ -505,16 +400,8 @@ export default function FormPage1() {
                 >
                     <div className="form-textarea-limit">
                         <span>
-                            <textarea
-                                id="input_491"
-                                className="form-textarea validate[required]"
-                                name="q491_6A"
-                                style={{ width: 648, height: 20 }}
-                                data-component="textarea"
-                                required=""
-                                aria-labelledby="label_491"
-                                defaultValue={""}
-                            />
+
+                            <TextArea id="input_491" name="q491_6A" labelled="label_491" height={20} />
                             <div className="form-textarea-limit-indicator">
                                 <span
                                     data-limit={45}
@@ -543,15 +430,7 @@ export default function FormPage1() {
                 <div id="cid_492" className="form-input-wide" data-layout="full">
                     <div className="form-textarea-limit">
                         <span>
-                            <textarea
-                                id="input_492"
-                                className="form-textarea"
-                                name="q492_bHow492"
-                                style={{ width: 648, height: 20 }}
-                                data-component="textarea"
-                                aria-labelledby="label_492"
-                                defaultValue={""}
-                            />
+                            <TextArea id="input_492" name="q492_bHow492" labelled="label_492" height={20} required={false} />
                             <div className="form-textarea-limit-indicator">
                                 <span
                                     data-limit={100}
@@ -594,10 +473,9 @@ export default function FormPage1() {
                     >
                         <span className="form-checkbox-item">
                             <span className="dragger-item" />
-                            <input
+                            <Checkbox
                                 aria-describedby="label_355"
-                                type="checkbox"
-                                className="form-checkbox validate[required, maxselection]"
+                                validate={["required", "maxselection"]}
                                 id="input_355_0"
                                 name="q355_4aWheredoyouliveCheckone[]"
                                 required=""
@@ -610,10 +488,9 @@ export default function FormPage1() {
                         </span>
                         <span className="form-checkbox-item">
                             <span className="dragger-item" />
-                            <input
+                            <Checkbox
                                 aria-describedby="label_355"
-                                type="checkbox"
-                                className="form-checkbox validate[required, maxselection]"
+                                validate={["required", "maxselection"]}
                                 id="input_355_1"
                                 name="q355_4aWheredoyouliveCheckone[]"
                                 required=""
@@ -626,10 +503,9 @@ export default function FormPage1() {
                         </span>
                         <span className="form-checkbox-item">
                             <span className="dragger-item" />
-                            <input
+                            <Checkbox
                                 aria-describedby="label_355"
-                                type="checkbox"
-                                className="form-checkbox validate[required, maxselection]"
+                                validate={["required", "maxselection"]}
                                 id="input_355_2"
                                 name="q355_4aWheredoyouliveCheckone[]"
                                 required=""
@@ -642,10 +518,9 @@ export default function FormPage1() {
                         </span>
                         <span className="form-checkbox-item" style={{ clear: "left" }}>
                             <span className="dragger-item" />
-                            <input
+                            <Checkbox
                                 aria-describedby="label_355"
-                                type="checkbox"
-                                className="form-checkbox validate[required, maxselection]"
+                                validate={["required", "maxselection"]}
                                 id="input_355_3"
                                 name="q355_4aWheredoyouliveCheckone[]"
                                 required=""
@@ -658,10 +533,9 @@ export default function FormPage1() {
                         </span>
                         <span className="form-checkbox-item">
                             <span className="dragger-item" />
-                            <input
+                            <Checkbox
                                 aria-describedby="label_355"
-                                type="checkbox"
-                                className="form-checkbox validate[required, maxselection]"
+                                validate={["required", "maxselection"]}
                                 id="input_355_4"
                                 name="q355_4aWheredoyouliveCheckone[]"
                                 required=""
@@ -674,10 +548,9 @@ export default function FormPage1() {
                         </span>
                         <span className="form-checkbox-item">
                             <span className="dragger-item" />
-                            <input
+                            <Checkbox
                                 aria-describedby="label_355"
-                                type="checkbox"
-                                className="form-checkbox validate[required, maxselection]"
+                                validate={["required", "maxselection"]}
                                 id="input_355_5"
                                 name="q355_4aWheredoyouliveCheckone[]"
                                 required=""
@@ -689,15 +562,15 @@ export default function FormPage1() {
                             </label>
                         </span>
                         <span className="form-checkbox-item formCheckboxOther">
-                            <input
-                                type="checkbox"
-                                className="form-checkbox-other form-checkbox validate[required, maxselection]"
+                            <Checkbox
+                                validate={["required", "maxselection"]}
                                 data-maxselection={1}
                                 name="q355_4aWheredoyouliveCheckone[other]"
                                 id="other_355"
                                 tabIndex={0}
                                 aria-label="Other (What?)"
                                 defaultValue="other"
+                                isOther
                             />
                             <label
                                 id="label_other_355"
@@ -753,10 +626,10 @@ export default function FormPage1() {
                     >
                         <span className="form-checkbox-item">
                             <span className="dragger-item" />
-                            <input
+                            <Checkbox
                                 aria-describedby="label_356"
-                                type="checkbox"
-                                className="form-checkbox validate[required]"
+                                validate={["required", "maxselection"]}
+                                data-maxselection={1}
                                 id="input_356_0"
                                 name="q356_bWith[]"
                                 required=""
@@ -768,10 +641,10 @@ export default function FormPage1() {
                         </span>
                         <span className="form-checkbox-item">
                             <span className="dragger-item" />
-                            <input
+                            <Checkbox
                                 aria-describedby="label_356"
-                                type="checkbox"
-                                className="form-checkbox validate[required]"
+                                validate={["required", "maxselection"]}
+                                data-maxselection={1}
                                 id="input_356_1"
                                 name="q356_bWith[]"
                                 required=""
@@ -783,10 +656,10 @@ export default function FormPage1() {
                         </span>
                         <span className="form-checkbox-item">
                             <span className="dragger-item" />
-                            <input
+                            <Checkbox
                                 aria-describedby="label_356"
-                                type="checkbox"
-                                className="form-checkbox validate[required]"
+                                validate={["required", "maxselection"]}
+                                data-maxselection={1}
                                 id="input_356_2"
                                 name="q356_bWith[]"
                                 required=""
@@ -797,9 +670,10 @@ export default function FormPage1() {
                             </label>
                         </span>
                         <span className="form-checkbox-item formCheckboxOther">
-                            <input
-                                type="checkbox"
-                                className="form-checkbox-other form-checkbox validate[required]"
+                            <Checkbox
+                                validate={["required", "maxselection"]}
+                                data-maxselection={1}
+                                isOther
                                 name="q356_bWith[other]"
                                 id="other_356"
                                 tabIndex={0}
@@ -833,24 +707,7 @@ export default function FormPage1() {
                     </div>
                 </div>
             </li>
-            <li className="form-line" data-type="control_text" id="id_357">
-                <div id="cid_357" className="form-input-wide" data-layout="full">
-                    <div
-                        id="text_357"
-                        className="form-html"
-                        data-component="text"
-                        tabIndex={-1}
-                    >
-                        <p style={{ textAlign: "center" }}>
-                            <strong>
-                                <span style={{ fontSize: "14pt" }}>
-                                    SECTION B - INFORMATION ABOUT ILLNESSES, INJURIES, OR CONDITIONS{" "}
-                                </span>
-                            </strong>
-                        </p>
-                    </div>
-                </div>
-            </li>
+            <TextContent id="357" heading="SECTION B - INFORMATION ABOUT ILLNESSES, INJURIES, OR CONDITIONS" />
             <li
                 className="form-line jf-required"
                 data-type="control_textarea"
@@ -872,16 +729,7 @@ export default function FormPage1() {
                 >
                     <div className="form-textarea-limit">
                         <span>
-                            <textarea
-                                id="input_358"
-                                className="form-textarea validate[required]"
-                                name="q358_8How"
-                                style={{ width: 648, height: 100 }}
-                                data-component="textarea"
-                                required=""
-                                aria-labelledby="label_358"
-                                defaultValue={""}
-                            />
+                            <TextArea id="input_358" name="q358_8How" labelled="label_358" />
                             <div className="form-textarea-limit-indicator">
                                 <span
                                     data-limit={400}
@@ -897,35 +745,7 @@ export default function FormPage1() {
                     </div>
                 </div>
             </li>
-            <li id="cid_507" className="form-input-wide" data-type="control_pagebreak">
-                <div className="form-pagebreak" data-component="pagebreak">
-                    <div className="form-pagebreak-back-container">
-                        <button
-                            id="form-pagebreak-back_507"
-                            type="button"
-                            className="form-pagebreak-back  jf-form-buttons"
-                            data-component="pagebreak-back"
-                        >
-                            Back
-                        </button>
-                    </div>
-                    <div className="form-pagebreak-next-container">
-                        <button
-                            id="form-pagebreak-next_507"
-                            type="button"
-                            className="form-pagebreak-next  jf-form-buttons"
-                            data-component="pagebreak-next"
-                        >
-                            Next
-                        </button>
-                    </div>
-                    <div
-                        style={{ clear: "both" }}
-                        className="pageInfo form-sub-label"
-                        id="pageInfo_507"
-                    />
-                </div>
-            </li>
+            <NavSection id="507" />
         </ul>
     )
 }
