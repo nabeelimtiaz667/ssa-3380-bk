@@ -1,5 +1,9 @@
 import Checkbox from "../components/Checkbox";
+import InputAddressBox from "../components/InputAddressBox";
+import InputEmail from "../components/InputEmail";
+import InputTelDate from "../components/InputTelDate";
 import InputTextBox from "../components/InputTextBox";
+import InputTextLite from "../components/InputTextLite";
 import NavSection from "../components/NavSection";
 import TextArea from "../components/TextArea";
 import TextContent from "../components/TextContent";
@@ -501,19 +505,7 @@ export default function FormPage8() {
                                 className="form-sub-label-container"
                                 style={{ verticalAlign: "top" }}
                             >
-                                <input
-                                    className="form-textbox validate[required, limitDate]"
-                                    id="month_483"
-                                    name="q483_date[month]"
-                                    type="tel"
-                                    size={2}
-                                    data-maxlength={2}
-                                    data-age=""
-                                    maxLength={2}
-                                    required=""
-                                    autoComplete="off"
-                                    aria-labelledby="label_483 sublabel_483_month"
-                                />
+                                <InputTelDate id="month_483" name="q483_date[month]" labelled="label_483 sublabel_483_month" />
                                 <span className="date-separate" aria-hidden="true">
                                     {" "}
                                     /
@@ -531,19 +523,7 @@ export default function FormPage8() {
                                 className="form-sub-label-container"
                                 style={{ verticalAlign: "top" }}
                             >
-                                <input
-                                    className="currentDate form-textbox validate[required, limitDate]"
-                                    id="day_483"
-                                    name="q483_date[day]"
-                                    type="tel"
-                                    size={2}
-                                    data-maxlength={2}
-                                    data-age=""
-                                    maxLength={2}
-                                    required=""
-                                    autoComplete="off"
-                                    aria-labelledby="label_483 sublabel_483_day"
-                                />
+                                <InputTelDate id="day_483" name="q483_date[day]" labelled="label_483 sublabel_483_day" isCurrentDate />
                                 <span className="date-separate" aria-hidden="true">
                                     {" "}
                                     /
@@ -561,20 +541,7 @@ export default function FormPage8() {
                                 className="form-sub-label-container"
                                 style={{ verticalAlign: "top" }}
                             >
-                                <input
-                                    className="form-textbox validate[required, limitDate]"
-                                    id="year_483"
-                                    name="q483_date[year]"
-                                    type="tel"
-                                    size={4}
-                                    data-maxlength={4}
-                                    data-age=""
-                                    maxLength={4}
-                                    required=""
-                                    autoComplete="off"
-                                    aria-labelledby="label_483 sublabel_483_year"
-                                    defaultValue={2025}
-                                />
+                                <InputTelDate id="year_483" name="q483_date[year]" labelled="label_483 sublabel_483_year" size={4} defaultValue={2025} />
                                 <label
                                     className="form-sub-label"
                                     htmlFor="year_483"
@@ -589,23 +556,7 @@ export default function FormPage8() {
                             className="form-sub-label-container"
                             style={{ verticalAlign: "top" }}
                         >
-                            <input
-                                className="form-textbox validate[required, limitDate, validateLiteDate]"
-                                id="lite_mode_483"
-                                type="text"
-                                size={12}
-                                data-maxlength={12}
-                                maxLength={12}
-                                data-age=""
-                                required=""
-                                data-format="mmddyyyy"
-                                data-seperator="/"
-                                placeholder="MM/DD/YYYY"
-                                data-placeholder="MM/DD/YYYY"
-                                autoComplete="off"
-                                aria-labelledby="label_483"
-                                defaultValue="08/05/2025"
-                            />
+                            <InputTextLite id="483" />
                             <button
                                 type="button"
                                 className=" newDefaultTheme-dateIcon focusable icon-liteMode"
@@ -636,25 +587,10 @@ export default function FormPage8() {
                     htmlFor="input_484"
                     aria-hidden="false"
                 >
-                    {" "}
                     Email address:
                 </label>
                 <div id="cid_484" className="form-input-wide" data-layout="half">
-                    {" "}
-                    <input
-                        type="email"
-                        id="input_484"
-                        name="q484_emailAddress"
-                        className="form-textbox validate[Email]"
-                        data-defaultvalue=""
-                        autoComplete="section-input_484 email"
-                        style={{ width: 310 }}
-                        size={310}
-                        placeholder="example@example.com"
-                        data-component="email"
-                        aria-labelledby="label_484"
-                        defaultValue=""
-                    />{" "}
+                    <InputEmail id="input_484" name="q484_emailAddress" autoComplete="section-input_484 email" labelled="label_484" />
                 </div>
             </li>
             <li
@@ -685,18 +621,7 @@ export default function FormPage8() {
                                     className="form-sub-label-container"
                                     style={{ verticalAlign: "top" }}
                                 >
-                                    <input
-                                        type="text"
-                                        id="input_319_addr_line1"
-                                        name="q319_mailingAddress[addr_line1]"
-                                        className="form-textbox validate[required] form-address-line"
-                                        data-defaultvalue=""
-                                        autoComplete="section-input_319 address-line1"
-                                        data-component="address_line_1"
-                                        aria-labelledby="label_319 sublabel_319_addr_line1"
-                                        required=""
-                                        defaultValue=""
-                                    />
+                                    <InputAddressBox addressType="addr_line1" className="line" data="address_line_1" autoComplete="address-line1" required />
                                     <label
                                         className="form-sub-label"
                                         htmlFor="input_319_addr_line1"
@@ -717,17 +642,7 @@ export default function FormPage8() {
                                     className="form-sub-label-container"
                                     style={{ verticalAlign: "top" }}
                                 >
-                                    <input
-                                        type="text"
-                                        id="input_319_addr_line2"
-                                        name="q319_mailingAddress[addr_line2]"
-                                        className="form-textbox form-address-line"
-                                        data-defaultvalue=""
-                                        autoComplete="section-input_319 off"
-                                        data-component="address_line_2"
-                                        aria-labelledby="label_319 sublabel_319_addr_line2"
-                                        defaultValue=""
-                                    />
+                                    <InputAddressBox addressType="addr_line2" className="line" data="address_line_2" autoComplete="off" />
                                     <label
                                         className="form-sub-label"
                                         htmlFor="input_319_addr_line2"
@@ -745,18 +660,7 @@ export default function FormPage8() {
                                     className="form-sub-label-container"
                                     style={{ verticalAlign: "top" }}
                                 >
-                                    <input
-                                        type="text"
-                                        id="input_319_city"
-                                        name="q319_mailingAddress[city]"
-                                        className="form-textbox validate[required] form-address-city"
-                                        data-defaultvalue=""
-                                        autoComplete="section-input_319 address-level2"
-                                        data-component="city"
-                                        aria-labelledby="label_319 sublabel_319_city"
-                                        required=""
-                                        defaultValue=""
-                                    />
+                                    <InputAddressBox addressType="city" className="city" autoComplete="address-level2" data="city" required />
                                     <label
                                         className="form-sub-label"
                                         htmlFor="input_319_city"
@@ -772,17 +676,7 @@ export default function FormPage8() {
                                     className="form-sub-label-container"
                                     style={{ verticalAlign: "top" }}
                                 >
-                                    <input
-                                        type="text"
-                                        id="input_319_state"
-                                        name="q319_mailingAddress[state]"
-                                        className="form-textbox form-address-state"
-                                        data-defaultvalue=""
-                                        autoComplete="section-input_319 address-level1"
-                                        data-component="state"
-                                        aria-labelledby="label_319 sublabel_319_state"
-                                        defaultValue=""
-                                    />
+                                    <InputAddressBox addressType="state" className="state" autoComplete="address-level1" data="state" />
                                     <label
                                         className="form-sub-label"
                                         htmlFor="input_319_state"
@@ -800,18 +694,7 @@ export default function FormPage8() {
                                     className="form-sub-label-container"
                                     style={{ verticalAlign: "top" }}
                                 >
-                                    <input
-                                        type="text"
-                                        id="input_319_postal"
-                                        name="q319_mailingAddress[postal]"
-                                        className="form-textbox validate[required] form-address-postal"
-                                        data-defaultvalue=""
-                                        autoComplete="section-input_319 postal-code"
-                                        data-component="zip"
-                                        aria-labelledby="label_319 sublabel_319_postal"
-                                        required=""
-                                        defaultValue=""
-                                    />
+                                    <InputAddressBox addressType="postal" className="postal" autoComplete="postal-code" data="zip" required />
                                     <label
                                         className="form-sub-label"
                                         htmlFor="input_319_postal"

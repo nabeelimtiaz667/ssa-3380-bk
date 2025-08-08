@@ -1,4 +1,5 @@
 import Checkbox from "../components/Checkbox";
+import InputTextOther from "../components/InputTextOther";
 import NavSection from "../components/NavSection";
 import TextArea from "../components/TextArea";
 import TextContent from "../components/TextContent";
@@ -536,16 +537,7 @@ export default function FormPage7() {
                                 className="other-input-container"
                                 style={{ display: "none" }}
                             >
-                                <input
-                                    type="text"
-                                    className="form-checkbox-other-input form-textbox"
-                                    name="q463_24Does[other]"
-                                    data-otherhint="Other (Explain)"
-                                    size={15}
-                                    id="input_463"
-                                    data-placeholder="Please type another option here"
-                                    placeholder="Please type another option here"
-                                />
+                                <InputTextOther id="input_463" name="q463_24Does[other]" hint="Other (Explain)" placeholder="Please type another option here" />
                             </span>
                         </span>
                     </div>
