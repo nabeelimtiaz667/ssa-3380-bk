@@ -12,8 +12,6 @@ import FormPage8 from "./views/FormPage8";
 function App() {
   return (
     <>
-      <OpeningPage />
-      <PrivacyAgreement />
       <FormPage1 />
       <FormPage2 />
       <FormPage3 />
