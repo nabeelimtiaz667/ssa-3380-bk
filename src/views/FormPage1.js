@@ -1,4 +1,9 @@
 import Checkbox from "../components/Checkbox";
+import CheckboxGroup from "../components/CheckboxGroup";
+import DatePicker from "../components/DatePickerForm1";
+import FormInput from "../components/FormInput";
+import FormLabel from "../components/FormLabel";
+import FormLine from "../components/FormLine";
 import InputTelBox from "../components/InputTelBox";
 import InputTelDate from "../components/InputTelDate";
 import InputTextBox from "../components/InputTextBox";
@@ -14,101 +19,42 @@ export default function FormPage1() {
             className="form-section page-section"
             role="presentation"
         >
-            <label>
-                1. NAME OF DISABLED PERSON<span className="form-required">*</span>
-            </label>
-            <InputTextBox id="input_190" name="q190_1Name" placeholder="First, Middle Initial, Last, Suffix" labelled="label_190" />
-            <label>
-                2. YOUR NAME<span className="form-required">*</span>
-            </label>
-            <InputTextBox id="input_487" name="q487_2Your" placeholder="Person completing the form" labelled="label_487" />
-            <label>
-                3. RELATIONSHIP (To disabled person)
-                <span className="form-required">*</span>
-            </label>
-            <InputTextBox id="input_488" name="q488_3Relationship" labelled="label_488" />
-            <label>
-                4. DATE<span className="form-required">*</span>
-            </label>
-            <div
-                id="cid_489"
-                className="form-input-wide jf-required"
-                data-layout="half"
-            >
-                <div data-wrapper-react="true">
-                    <div style={{ display: "none" }}>
-                        <span
-                            className="form-sub-label-container"
-                            style={{ verticalAlign: "top" }}
-                        >
-                            <InputTelDate id="month_489" name="q489_4Date[month]" labelled="label_489 sublabel_489_month" />
-                            <span className="date-separate" aria-hidden="true">
-                                /
-                            </span>
-                            <label
-                                className="form-sub-label"
-                                htmlFor="month_489"
-                                id="sublabel_489_month"
-                                style={{ minHeight: 13 }}
-                            >
-                                Month
-                            </label>
-                        </span>
-                        <span
-                            className="form-sub-label-container"
-                            style={{ verticalAlign: "top" }}
-                        >
-                            <InputTelDate id="day_489" name="q489_4Date[day]" labelled="label_489 sublabel_489_day" isCurrentDate />
-                            <span className="date-separate" aria-hidden="true">
-                                /
-                            </span>
-                            <label
-                                className="form-sub-label"
-                                htmlFor="day_489"
-                                id="sublabel_489_day"
-                                style={{ minHeight: 13 }}
-                            >
-                                Day
-                            </label>
-                        </span>
-                        <span
-                            className="form-sub-label-container"
-                            style={{ verticalAlign: "top" }}
-                        >
-                            <InputTelDate id="year_489" name="q489_4Date[year]" labelled="label_489 sublabel_489_year" size={4} defaultValue={2025} />
-                            <label
-                                className="form-sub-label"
-                                htmlFor="year_489"
-                                id="sublabel_489_year"
-                                style={{ minHeight: 13 }}
-                            >
-                                Year
-                            </label>
-                        </span>
-                    </div>
-                    <span
-                        className="form-sub-label-container"
-                        style={{ verticalAlign: "top" }}
-                    >
-                        <InputTextLite id="489" />
-                        <button
-                            type="button"
-                            className=" newDefaultTheme-dateIcon focusable icon-liteMode"
-                            id="input_489_pick"
-                            data-component="datetime"
-                            aria-hidden="true"
-                            data-allow-time="No"
-                            data-version="v2"
-                        />
-                        <label
-                            className="form-sub-label is-empty"
-                            htmlFor="lite_mode_489"
-                            id="sublabel_489_litemode"
-                            style={{ minHeight: 13 }}
-                        />
-                    </span>
-                </div>
-            </div>
+            <FormLine control="control_textbox" id="id_190">
+                <FormLabel id="label_190" htmlFor="input_190" aria-hidden="false"
+                >
+                    1. NAME OF DISABLED PERSON<span className="form-required">*</span>
+                </FormLabel>
+                <FormInput id="cid_190">
+                    <InputTextBox id="input_190" name="q190_1Name" placeholder="First, Middle Initial, Last, Suffix" labelled="label_190" />
+                </FormInput>
+            </FormLine>
+            <FormLine control="control_textbox" id="id_487">
+                <FormLabel id="label_487" htmlFor="input_487" aria-hidden="false"
+                >
+                    2. YOUR NAME<span className="form-required">*</span>
+                </FormLabel>
+                <FormInput id="cid_487">
+                    <InputTextBox id="input_487" name="q487_2Your" placeholder="Person completing the form" labelled="label_487" />
+                </FormInput>
+            </FormLine>
+            <FormLine control="control_textbox" id="id_488">
+                <FormLabel id="label_488" htmlFor="input_488" aria-hidden="false"
+                >
+                    3. RELATIONSHIP (To disabled person)
+                    <span className="form-required">*</span>
+                </FormLabel>
+                <FormInput id="cid_488">
+                    <InputTextBox id="input_488" name="q488_3Relationship" labelled="label_488" />
+                </FormInput>
+            </FormLine>
+            <FormLine control="control_datetime" id="id_489">
+                <FormLabel id="label_489" htmlFor="lite_mode_489">
+                    4. DATE<span className="form-required">*</span>
+                </FormLabel>
+                <FormInput id="cid_489">
+                    <DatePicker />
+                </FormInput>
+            </FormLine>
             <TextContent id="193">
                 <p>
                     3. <strong>YOUR DAYTIME TELEPHONE NUMBER</strong>
@@ -118,80 +64,102 @@ export default function FormPage1() {
                     </em>
                 </p>
             </TextContent>
-            <label>
-                Primary:<span className="form-required">*</span>
-            </label>
-            <div className="flex flex-row">
-                <InputTelBox id="input_327_area" name="q327_primary327[area]" autoComplete="section-input_327 tel-area-code" placeholder={212} dataComponent="areaCode" labelled="label_327 sublabel_327_area" />
-                <InputTelBox id="input_327_phone" name="q327_primary327[phone]" autoComplete="section-input_327 tel-local" placeholder="555-5555" dataComponent="phone" labelled="label_327 sublabel_327_phone" />
-
-            </div>
-            <label
-                className="form-label form-label-top"
-                id="label_354"
-                aria-hidden="true"
-            >
-                <span className="form-required">*</span>
-            </label>
-            <div
-                id="cid_354"
-                className="form-input-wide jf-required"
-                data-layout="full"
-            >
-                <div
-                    className="form-multiple-column"
-                    data-columncount={2}
-                    role="group"
-                    aria-labelledby="label_354"
-                    data-component="checkbox"
-                >
-                    <span className="form-checkbox-item">
-                        <span className="dragger-item" />
-                        <Checkbox
-                            aria-describedby="label_354"
-                            validate={["required", "maxselection"]}
-                            id="input_354_0"
-                            name="q354_typeA354[]"
-                            required=""
-                            data-maxselection={1}
-                            defaultValue="Your Number"
-                        />
-                        <label id="label_input_354_0" htmlFor="input_354_0">
-                            Your Number
-                        </label>
-                    </span>
-                    <span className="form-checkbox-item">
-                        <span className="dragger-item" />
-                        <Checkbox
-                            aria-describedby="label_354"
-                            validate={["required", "maxselection"]}
-                            id="input_354_1"
-                            name="q354_typeA354[]"
-                            required=""
-                            data-maxselection={1}
-                            defaultValue="Message Number"
-                        />
-                        <label id="label_input_354_1" htmlFor="input_354_1">
-                            Message Number
-                        </label>
-                    </span>
-                    <span className="form-checkbox-item" style={{ clear: "left" }}>
-                        <span className="dragger-item" />
-                        <Checkbox
-                            aria-describedby="label_354"
-                            validate={["required", "maxselection"]}
-                            id="input_354_2"
-                            name="q354_typeA354[]"
-                            required=""
-                            data-maxselection={1}
-                            defaultValue="None"
-                        />
-                        <label id="label_input_354_2" htmlFor="input_354_2">
-                            None
-                        </label>
-                    </span>
-                </div>
-            </div>
+            <FormLine control="control_phone" id="id_327">
+                <FormLabel id="label_327" htmlFor="input_327_area" aria-hidden="false">
+                    Primary:<span className="form-required">*</span>
+                </FormLabel>
+                <FormInput id="cid_327">
+                    <div className="flex flex-row" data-wrapper-react="true">
+                        <span
+                            className="form-sub-label-container"
+                            style={{ verticalAlign: "top" }}
+                            data-input-type="areaCode"
+                        >
+                            <InputTelBox id="input_327_area" name="q327_primary327[area]" autoComplete="section-input_327 tel-area-code" placeholder={212} dataComponent="areaCode" labelled="label_327 sublabel_327_area" />
+                            <span className="phone-separate" aria-hidden="true">
+                                -
+                            </span>
+                            <label
+                                className="form-sub-label"
+                                htmlFor="input_327_area"
+                                id="sublabel_327_area"
+                                style={{ minHeight: 13 }}
+                            >
+                                Area Code
+                            </label>
+                        </span>
+                        <span
+                            className="form-sub-label-container"
+                            style={{ verticalAlign: "top" }}
+                            data-input-type="phone"
+                        >
+                            <InputTelBox id="input_327_phone" name="q327_primary327[phone]" autoComplete="section-input_327 tel-local" placeholder="555-5555" dataComponent="phone" labelled="label_327 sublabel_327_phone" />
+                            <label
+                                className="form-sub-label"
+                                htmlFor="input_327_phone"
+                                id="sublabel_327_phone"
+                                style={{ minHeight: 13 }}
+                            >
+                                Phone Number
+                            </label>
+                        </span>
+                    </div>
+                </FormInput>
+            </FormLine>
+            <FormLine control="control_checkbox" id="id_354">
+                <FormLabel id="label_354" aria-hidden="true">
+                    <span className="form-required">*</span>
+                </FormLabel>
+                <FormInput id="cid_354">
+                    <CheckboxGroup>
+                        <span className="form-checkbox-item">
+                            <span className="dragger-item" />
+                            <Checkbox
+                                aria-describedby="label_354"
+                                validate={["required", "maxselection"]}
+                                id="input_354_0"
+                                name="q354_typeA354[]"
+                                required=""
+                                data-maxselection={1}
+                                defaultValue="Your Number"
+                            />
+                            <label id="label_input_354_0" htmlFor="input_354_0">
+                                Your Number
+                            </label>
+                        </span>
+                        <span className="form-checkbox-item">
+                            <span className="dragger-item" />
+                            <Checkbox
+                                aria-describedby="label_354"
+                                validate={["required", "maxselection"]}
+                                id="input_354_1"
+                                name="q354_typeA354[]"
+                                required=""
+                                data-maxselection={1}
+                                defaultValue="Message Number"
+                            />
+                            <label id="label_input_354_1" htmlFor="input_354_1">
+                                Message Number
+                            </label>
+                        </span>
+                        <span className="form-checkbox-item" style={{ clear: "left" }}>
+                            <span className="dragger-item" />
+                            <Checkbox
+                                aria-describedby="label_354"
+                                validate={["required", "maxselection"]}
+                                id="input_354_2"
+                                name="q354_typeA354[]"
+                                required=""
+                                data-maxselection={1}
+                                defaultValue="None"
+                            />
+                            <label id="label_input_354_2" htmlFor="input_354_2">
+                                None
+                            </label>
+                        </span>
+                    </CheckboxGroup>
+                </FormInput>
+            </FormLine>
             <TextContent id="490">
                 <p>
                     <span style={{ fontSize: "12pt" }}>
@@ -205,88 +173,64 @@ export default function FormPage1() {
                     </span>
                 </p>
             </TextContent>
-            <label
-                className="form-label form-label-top form-label-auto"
-                id="label_491"
-                htmlFor="input_491"
-                aria-hidden="false"
-            >
-                6. a. How long have you known the disabled person?
-                <span className="form-required">*</span>
-            </label>
-            <div
-                id="cid_491"
-                className="form-input-wide jf-required"
-                data-layout="full"
-            >
-                <div className="form-textarea-limit">
-                    <span>
-
-                        <TextArea id="input_491" name="q491_6A" labelled="label_491" height={20} />
-                        <div className="form-textarea-limit-indicator">
-                            <span
-                                data-limit={45}
-                                type="Letters"
-                                data-minimum={-1}
-                                data-typeminimum="Letters"
-                                id="input_491-limit"
-                            >
-                                0/45
-                            </span>
-                        </div>
-                    </span>
-                </div>
-            </div>
-            <label
-                className="form-label form-label-top form-label-auto"
-                id="label_492"
-                htmlFor="input_492"
-                aria-hidden="false"
-            >
-                b. How much time do you spend with the disabled person and what do you
-                do together?{" "}
-            </label>
-            <div id="cid_492" className="form-input-wide" data-layout="full">
-                <div className="form-textarea-limit">
-                    <span>
-                        <TextArea id="input_492" name="q492_bHow492" labelled="label_492" height={20} required={false} />
-                        <div className="form-textarea-limit-indicator">
-                            <span
-                                data-limit={100}
-                                type="Letters"
-                                data-minimum={-1}
-                                data-typeminimum="Letters"
-                                id="input_492-limit"
-                            >
-                                0/100
-                            </span>
-                        </div>
-                    </span>
-                </div>
-            </div>
-
-            <label
-                className="form-label form-label-top"
-                id="label_355"
-                aria-hidden="false"
-            >
-                7. a. Where does the disabled person live? (Check one.)
-                <span className="form-required">*</span>
-            </label>
-            <div
-                id="cid_355"
-                className="form-input-wide jf-required"
-                data-layout="full"
-            >
-                <div
-                    className="form-multiple-column"
-                    data-columncount={3}
-                    role="group"
-                    aria-labelledby="label_355"
-                    data-component="checkbox"
+            <FormLine control="control_textarea" id="id_491">
+                <FormLabel id="label_491" htmlFor="input_491" aria-hidden="false"
                 >
-                    <span className="form-checkbox-item">
-                        <span className="dragger-item" />
+                    6. a. How long have you known the disabled person?
+                    <span className="form-required">*</span>
+                </FormLabel>
+                <FormInput id="cid_491">
+                    <div className="form-textarea-limit">
+                        <span>
+
+                            <TextArea id="input_491" name="q491_6A" labelled="label_491" height={20} />
+                            <div className="form-textarea-limit-indicator">
+                                <span
+                                    data-limit={45}
+                                    type="Letters"
+                                    data-minimum={-1}
+                                    data-typeminimum="Letters"
+                                    id="input_491-limit"
+                                >
+                                    0/45
+                                </span>
+                            </div>
+                        </span>
+                    </div>
+                </FormInput>
+            </FormLine>
+            <li className="form-line" data-type="control_textarea" id="id_492">
+                <FormLabel id="label_492" htmlFor="input_492" aria-hidden="false"
+                >
+                    b. How much time do you spend with the disabled person and what do you
+                    do together?{" "}
+                </FormLabel>
+                <div id="cid_492" className="form-input-wide" >
+                    <div className="form-textarea-limit">
+                        <span>
+                            <TextArea id="input_492" name="q492_bHow492" labelled="label_492" height={20} required={false} />
+                            <div className="form-textarea-limit-indicator">
+                                <span
+                                    data-limit={100}
+                                    type="Letters"
+                                    data-minimum={-1}
+                                    data-typeminimum="Letters"
+                                    id="input_492-limit"
+                                >
+                                    0/100
+                                </span>
+                            </div>
+                        </span>
+                    </div>
+                </div>
+            </li>
+            <FormLine control="control_checkbox" id="id_355">
+                <FormLabel id="label_355" aria-hidden="false">
+                    7. a. Where does the disabled person live? (Check one.)
+                    <span className="form-required">*</span>
+                </FormLabel>
+                <FormInput id="cid_355">
+                    <CheckboxGroup>
                         <Checkbox
                             aria-describedby="label_355"
                             validate={["required", "maxselection"]}
@@ -299,9 +243,6 @@ export default function FormPage1() {
                         <label id="label_input_355_0" htmlFor="input_355_0">
                             House
                         </label>
-                    </span>
-                    <span className="form-checkbox-item">
-                        <span className="dragger-item" />
                         <Checkbox
                             aria-describedby="label_355"
                             validate={["required", "maxselection"]}
@@ -314,9 +255,6 @@ export default function FormPage1() {
                         <label id="label_input_355_1" htmlFor="input_355_1">
                             Apartment
                         </label>
-                    </span>
-                    <span className="form-checkbox-item">
-                        <span className="dragger-item" />
                         <Checkbox
                             aria-describedby="label_355"
                             validate={["required", "maxselection"]}
@@ -329,9 +267,6 @@ export default function FormPage1() {
                         <label id="label_input_355_2" htmlFor="input_355_2">
                             Boarding House
                         </label>
-                    </span>
-                    <span className="form-checkbox-item" style={{ clear: "left" }}>
-                        <span className="dragger-item" />
                         <Checkbox
                             aria-describedby="label_355"
                             validate={["required", "maxselection"]}
@@ -344,9 +279,6 @@ export default function FormPage1() {
                         <label id="label_input_355_3" htmlFor="input_355_3">
                             Nursing Home
                         </label>
-                    </span>
-                    <span className="form-checkbox-item">
-                        <span className="dragger-item" />
                         <Checkbox
                             aria-describedby="label_355"
                             validate={["required", "maxselection"]}
@@ -359,9 +291,6 @@ export default function FormPage1() {
                         <label id="label_input_355_4" htmlFor="input_355_4">
                             Shelter
                         </label>
-                    </span>
-                    <span className="form-checkbox-item">
-                        <span className="dragger-item" />
                         <Checkbox
                             aria-describedby="label_355"
                             validate={["required", "maxselection"]}
@@ -374,8 +303,6 @@ export default function FormPage1() {
                         <label id="label_input_355_5" htmlFor="input_355_5">
                             Group Home
                         </label>
-                    </span>
-                    <span className="form-checkbox-item formCheckboxOther">
                         <Checkbox
                             validate={["required", "maxselection"]}
                             data-maxselection={1}
@@ -395,39 +322,20 @@ export default function FormPage1() {
                         </label>
                         <span
                             id="other_355_input"
-                            className="other-input-container"
-                            style={{ display: "none" }}
+                            className="other-input-container is-none"
                         >
                             <InputTextOther id="input_355" name="q355_4aWheredoyouliveCheckone[other]" hint="Other (Explain)" placeholder="Please type another option here" />
                         </span>
-                    </span>
-                </div>
-            </div>
-            <div
-                className="field-group jf-required"
-                data-type="control_checkbox"
-                id="id_356"
-            >
-                <label
-                    className="form-label form-label-top"
-                    id="label_356"
-                    aria-hidden="false"
-                >
+                    </CheckboxGroup>
+                </FormInput>
+            </FormLine>
+            <FormLine control="control_checkbox" id="id_356">
+                <FormLabel id="label_356" aria-hidden="false">
                     b. With whom does he/she live? (Check one.)
                     <span className="form-required">*</span>
-                </label>
-                <div
-                    id="cid_356"
-                    className="form-input-wide jf-required"
-                    data-layout="full"
-                >
-                    <div
-                        className="form-multiple-column"
-                        data-columncount={3}
-                        role="group"
-                        aria-labelledby="label_356"
-                        data-component="checkbox"
-                    >
+                </FormLabel>
+                <FormInput id="cid_356">
+                    <CheckboxGroup>
                         <span className="form-checkbox-item">
                             <span className="dragger-item" />
                             <Checkbox
@@ -499,41 +407,35 @@ export default function FormPage1() {
                                 <InputTextOther id="input_356" name="q356_bWith[other]" hint="Other (Explain)" placeholder="Please type another option here" />
                             </span>
                         </span>
-                    </div>
-                </div>
-            </div>
+                    </CheckboxGroup>
+                </FormInput>
+            </FormLine>
             <TextContent id="357" heading="SECTION B - INFORMATION ABOUT ILLNESSES, INJURIES, OR CONDITIONS" />
-            <label
-                className="form-label form-label-top form-label-auto"
-                id="label_358"
-                htmlFor="input_358"
-                aria-hidden="false"
-            >
-                8. How does this person's illnesses, injuries, or conditions limit
-                his/her ability to work?<span className="form-required">*</span>{" "}
-            </label>
-            <div
-                id="cid_358"
-                className="form-input-wide jf-required"
-                data-layout="full"
-            >
-                <div className="form-textarea-limit">
-                    <span>
-                        <TextArea id="input_358" name="q358_8How" labelled="label_358" />
-                        <div className="form-textarea-limit-indicator">
-                            <span
-                                data-limit={400}
-                                type="Letters"
-                                data-minimum={-1}
-                                data-typeminimum="Letters"
-                                id="input_358-limit"
-                            >
-                                0/400
-                            </span>
-                        </div>
-                    </span>
-                </div>
-            </div>
+            <FormLine control="control_textarea" id="id_358">
+                <FormLabel id="label_358" htmlFor="input_358" aria-hidden="false"
+                >
+                    8. How does this person's illnesses, injuries, or conditions limit
+                    his/her ability to work?<span className="form-required">*</span>{" "}
+                </FormLabel>
+                <FormInput id="cid_358">
+                    <div className="form-textarea-limit">
+                        <span>
+                            <TextArea id="input_358" name="q358_8How" labelled="label_358" />
+                            <div className="form-textarea-limit-indicator">
+                                <span
+                                    data-limit={400}
+                                    type="Letters"
+                                    data-minimum={-1}
+                                    data-typeminimum="Letters"
+                                    id="input_358-limit"
+                                >
+                                    0/400
+                                </span>
+                            </div>
+                        </span>
+                    </div>
+                </FormInput>
+            </FormLine>
             <NavSection id="507" />
         </ul>
     )

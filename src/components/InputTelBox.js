@@ -1,9 +1,9 @@
-export default function InputTelBox({ id = "", name = "", defaultValue = "", autoComplete = "", placeholder, dataComponent = "", required = true, labelled = "" }) {
+export default function InputTelBox({ id = "", name = "", defaultValue = "", autoComplete = "", placeholder, dataComponent = "", required = true, labelled = "", tailwind = "" }) {
     return <input
         type="tel"
         id={id}
         name={name}
-        className="form-textbox validate[required]"
+        className={"validate[required] " + tailwind}
         data-defaultvalue={defaultValue}
         autoComplete={autoComplete}
         placeholder={placeholder}

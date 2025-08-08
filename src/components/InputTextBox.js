@@ -1,5 +1,5 @@
 export default function InputTextBox({ id = "", name = "", defaultValue = "", style = { width: 310 }, size = 310, placeholder = "", required = true, labelled = "", ...restProps }) {
-    let className = "form-textbox";
+    let className = "";
     className = required ? (className + " validate[required]") : className
     return <input
         type="text"
@@ -8,8 +8,8 @@ export default function InputTextBox({ id = "", name = "", defaultValue = "", st
         data-type="input-textbox"
         className={className}
         data-defaultvalue={defaultValue}
-        style={style}
-        size={size}
+        // style={style}
+        // size={size}
         placeholder={placeholder}
         data-component="textbox"
         aria-labelledby={labelled}
