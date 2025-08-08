@@ -1,5 +1,6 @@
 import Checkbox from "../components/Checkbox";
 import InputTextBox from "../components/InputTextBox";
+import InputTextOther from "../components/InputTextOther";
 import NavSection from "../components/NavSection";
 import TextArea from "../components/TextArea";
 import TextContent from "../components/TextContent";
@@ -128,21 +129,6 @@ export default function FormPage4() {
                     data-layout="half"
                 >
                     <InputTextBox id="input_403" name="q403_aHow" labelled="label_403" maxLength={60} />
-                    {/* <input
-                        type="text"
-                        id="input_403"
-                        name="q403_aHow"
-                        data-type="input-textbox"
-                        className="form-textbox validate[required]"
-                        data-defaultvalue=""
-                        style={{ width: 310 }}
-                        size={310}
-                        maxLength={60}
-                        data-component="textbox"
-                        aria-labelledby="label_403"
-                        required=""
-                        defaultValue=""
-                    /> */}
                 </div>
             </li>
             <li
@@ -301,16 +287,7 @@ export default function FormPage4() {
                                 className="other-input-container"
                                 style={{ display: "none" }}
                             >
-                                <input
-                                    type="text"
-                                    className="form-checkbox-other-input form-textbox"
-                                    name="q406_bWhen[other]"
-                                    data-otherhint="Other (Explain)"
-                                    size={15}
-                                    id="input_406"
-                                    data-placeholder="Please type another option here"
-                                    placeholder="Please type another option here"
-                                />
+                                <InputTextOther id="input_406" name="q406_bWhen[other]" hint="Other (Explain)" placeholder="Please type another option here" />
                             </span>
                         </span>
                     </div>

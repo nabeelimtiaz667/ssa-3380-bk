@@ -1,6 +1,9 @@
 import Checkbox from "../components/Checkbox";
 import InputTelBox from "../components/InputTelBox";
+import InputTelDate from "../components/InputTelDate";
 import InputTextBox from "../components/InputTextBox";
+import InputTextLite from "../components/InputTextLite";
+import InputTextOther from "../components/InputTextOther";
 import NavSection from "../components/NavSection";
 import TextArea from "../components/TextArea";
 import TextContent from "../components/TextContent";
@@ -107,19 +110,7 @@ export default function FormPage1() {
                                 className="form-sub-label-container"
                                 style={{ verticalAlign: "top" }}
                             >
-                                <input
-                                    className="form-textbox validate[required, limitDate]"
-                                    id="month_489"
-                                    name="q489_4Date[month]"
-                                    type="tel"
-                                    size={2}
-                                    data-maxlength={2}
-                                    data-age=""
-                                    maxLength={2}
-                                    required=""
-                                    autoComplete="off"
-                                    aria-labelledby="label_489 sublabel_489_month"
-                                />
+                                <InputTelDate id="month_489" name="q489_4Date[month]" labelled="label_489 sublabel_489_month" />
                                 <span className="date-separate" aria-hidden="true">
                                     /
                                 </span>
@@ -136,19 +127,7 @@ export default function FormPage1() {
                                 className="form-sub-label-container"
                                 style={{ verticalAlign: "top" }}
                             >
-                                <input
-                                    className="currentDate form-textbox validate[required, limitDate]"
-                                    id="day_489"
-                                    name="q489_4Date[day]"
-                                    type="tel"
-                                    size={2}
-                                    data-maxlength={2}
-                                    data-age=""
-                                    maxLength={2}
-                                    required=""
-                                    autoComplete="off"
-                                    aria-labelledby="label_489 sublabel_489_day"
-                                />
+                                <InputTelDate id="day_489" name="q489_4Date[day]" labelled="label_489 sublabel_489_day" isCurrentDate />
                                 <span className="date-separate" aria-hidden="true">
                                     /
                                 </span>
@@ -165,20 +144,7 @@ export default function FormPage1() {
                                 className="form-sub-label-container"
                                 style={{ verticalAlign: "top" }}
                             >
-                                <input
-                                    className="form-textbox validate[required, limitDate]"
-                                    id="year_489"
-                                    name="q489_4Date[year]"
-                                    type="tel"
-                                    size={4}
-                                    data-maxlength={4}
-                                    data-age=""
-                                    maxLength={4}
-                                    required=""
-                                    autoComplete="off"
-                                    aria-labelledby="label_489 sublabel_489_year"
-                                    defaultValue={2025}
-                                />
+                                <InputTelDate id="year_489" name="q489_4Date[year]" labelled="label_489 sublabel_489_year" size={4} defaultValue={2025} />
                                 <label
                                     className="form-sub-label"
                                     htmlFor="year_489"
@@ -193,23 +159,7 @@ export default function FormPage1() {
                             className="form-sub-label-container"
                             style={{ verticalAlign: "top" }}
                         >
-                            <input
-                                className="form-textbox validate[required, limitDate, validateLiteDate]"
-                                id="lite_mode_489"
-                                type="text"
-                                size={12}
-                                data-maxlength={12}
-                                maxLength={12}
-                                data-age=""
-                                required=""
-                                data-format="mmddyyyy"
-                                data-seperator="/"
-                                placeholder="MM/DD/YYYY"
-                                data-placeholder="MM/DD/YYYY"
-                                autoComplete="off"
-                                aria-labelledby="label_489"
-                                defaultValue="08/05/2025"
-                            />
+                            <InputTextLite id="489" />
                             <button
                                 type="button"
                                 className=" newDefaultTheme-dateIcon focusable icon-liteMode"
@@ -584,16 +534,7 @@ export default function FormPage1() {
                                 className="other-input-container"
                                 style={{ display: "none" }}
                             >
-                                <input
-                                    type="text"
-                                    className="form-checkbox-other-input form-textbox"
-                                    name="q355_4aWheredoyouliveCheckone[other]"
-                                    data-otherhint="Other (What?)"
-                                    size={15}
-                                    id="input_355"
-                                    data-placeholder="Please type another option here"
-                                    placeholder="Please type another option here"
-                                />
+                                <InputTextOther id="input_355" name="q355_4aWheredoyouliveCheckone[other]" hint="Other (Explain)" placeholder="Please type another option here" />
                             </span>
                         </span>
                     </div>
@@ -692,16 +633,7 @@ export default function FormPage1() {
                                 className="other-input-container"
                                 style={{ display: "none" }}
                             >
-                                <input
-                                    type="text"
-                                    className="form-checkbox-other-input form-textbox"
-                                    name="q356_bWith[other]"
-                                    data-otherhint="Other (Describe relationship.)"
-                                    size={15}
-                                    id="input_356"
-                                    data-placeholder="Please type another option here"
-                                    placeholder="Please type another option here"
-                                />
+                                <InputTextOther id="input_356" name="q356_bWith[other]" hint="Other (Explain)" placeholder="Please type another option here" />
                             </span>
                         </span>
                     </div>

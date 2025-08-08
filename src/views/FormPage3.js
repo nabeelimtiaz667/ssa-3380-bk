@@ -357,21 +357,6 @@ export default function FormPage3() {
                     data-layout="half"
                 >
                     <InputTextBox id="input_393" name="q393_howLong" labelled="label_393" maxLength={70} />
-                    {/* <input
-                        type="text"
-                        id="input_393"
-                        name="q393_howLong"
-                        data-type="input-textbox"
-                        className="form-textbox validate[required]"
-                        data-defaultvalue=""
-                        style={{ width: 310 }}
-                        size={310}
-                        maxLength={70}
-                        data-component="textbox"
-                        aria-labelledby="label_393"
-                        required=""
-                        defaultValue=""
-                    /> */}
                 </div>
             </li>
             <li
